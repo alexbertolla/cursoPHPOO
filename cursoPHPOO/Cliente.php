@@ -26,9 +26,5 @@ class Cliente {
         $this->telefone = $telefone;
         $this->email = $email;
     }
-    
-    
-    
-   
 
 }

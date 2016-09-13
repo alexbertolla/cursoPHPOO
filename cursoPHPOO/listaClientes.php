@@ -11,10 +11,21 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     </head>
     <body>
-        <?php include_once './arrayClientes.php'; ?>
+        <?php
+        include_once './arrayClientes.php';
+        $ordem = 'C';
+        if (!isset($_GET['ordem']) || $_GET['ordem'] == 'C') {
+            sort($listaCliente);
+            $ordem = 'D';
+        } else {
+            rsort($listaCliente);
+        }
+//        ($ordem === 'C') ?  : ;
+//        print_r($listaCliente)
+        ?>
         <table border ='1' class="table table-hover table-bordered sortable">
             <tr>
-                <td>Nome</td>
+                <td><a href="listaClientes.php?ordem=<?php echo $ordem ?>">Nome</a></td>
             </tr>
 
             <?php
@@ -32,7 +43,7 @@ and open the template in the editor.
             ?>
         </table>
         <?php
-        if ($_GET) {
+        if ($_GET['nome']) {
             echo 'Nome: ' . $_GET['nome'] . '<br/>';
             echo 'CPF: ' . $_GET['cpf'] . '<br/>';
             echo 'Endereço: ' . $_GET['endereco'] . '<br/>';
