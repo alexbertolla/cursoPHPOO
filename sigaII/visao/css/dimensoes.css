@@ -1,0 +1,301 @@
+html {
+    font-family: "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,sans-serif !important;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.center-login {
+    text-align: center;
+    background:#f0f;
+    position:absolute;
+    text-align:center;
+    border-radius: 10px;
+    background:#ededed;
+    background:-webkit-gradient(linear, left top, left bottom,color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+    background:-moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+    background:-ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+#divInfoLogin {
+    font-size: 12px;
+    height: 30px;
+    padding: 5px 5px;
+}
+
+#divLogin #basic-addon1 {
+    text-align: right;
+    min-width: 80px;
+}
+
+.item {
+    width:100%;
+    height:100%;
+    border:1px solid #cecece;
+    background:#ededed;
+    background:-webkit-gradient(linear, left top, left bottom,color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+    background:-moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+    background:-ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+}
+
+.item {
+    display:table;
+}
+
+.btn {
+    min-width: 120px;
+}
+
+.btn.add {
+    width: 34.19px;
+}
+
+.input-pesquisa {
+    width: 360px !important;
+}
+
+#foot {
+    position: relative;
+    bottom: 0;
+}
+
+.tile {
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    overflow-y: hidden;
+}
+
+.tile img {
+    height: 80%;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+    -webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(rgba(0,0,0,0.6)), to(rgba(0,0,0,0)));
+}
+
+.tile .title {
+    margin-top: 0px;
+}
+
+.tile.c1 {
+    background: #337BB7;
+}
+
+.tile.c1:hover {
+    background: #1266AB;
+}
+
+.tile.c2 {
+    background: #6CA6D6;
+}
+
+.tile.c2:hover {
+    background: #5393C8;
+}
+
+.tile.c3 {
+    background: #24C081;
+}
+
+.tile.c3:hover {
+    background: #08B36E;
+}
+
+.tile.c4 {
+    background: #8B57CD;
+}
+
+.tile.c4:hover {
+    background: #7337BE;
+}
+
+.tile.c5 {
+    background: #FFA62B;
+  }
+
+.tile.c5:hover {
+    background: #FF980B;
+}
+
+.lista-itens-cad ul {
+    padding: 0;
+}
+
+.spanLiCadastradosLabel label {
+    padding-left: 20px;
+}
+
+.tab-cad-fornecedor .tab-content {
+  padding : 10px 15px;
+  border: 1px solid #337ab7;
+  border-radius: 0 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.tab-cad-fornecedor .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+.tab-config-dados-unidade .tab-content {
+  padding : 10px 15px;
+  border: 1px solid #337ab7;
+  border-radius: 0 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.tab-config-dados-unidade .nav-pills > li > a {
+  border-radius: 4px 4px 0 0 ;
+}
+
+#sistema #nav .navbar.navbar-default {
+    box-shadow: 0 3px 2px -2px gray;
+    border-width: 0 1px 0 1px;
+    background-color: rgba(51, 122, 183, 0.12);
+}
+
+#sistema #nav .navbar.navbar-default li.dropdown.open > a {
+    background-color: #B1D4F2;
+}
+
+#imgLogoPrincipal {
+    width: 50%;
+}
+
+#imgLogoLogin {
+    width: 90%;
+    padding: 15px 0;
+}
+
+.panel-primary .panel-heading {
+    height: 40px;
+}
+
+.panel .panel-heading h3 {
+    margin: 10px 10px;
+    font-size: 18px;
+}
+
+#divProgressbar{
+    display: none;
+    position: absolute;
+    float: left;
+    width: 97%;
+    height: 60rem;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 5;
+}
+
+#progressbar{
+    left: 40%;
+    top: 20rem;
+}
+
+.ui-progressbar {
+    position: relative;
+    width: 20rem;
+
+}
+
+.progress-label {
+    position: absolute;
+    left: 25%;
+    top: .2rem;
+    font-weight: bold;
+    text-shadow: .1rem .1rem 0rem #fff;
+}
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.table > tbody > tr > td, .table > thead > tr > th {
+    vertical-align: middle !important;
+}
+
+@media(min-width:768px){
+    .center-login {
+        position: absolute;
+        width: 580px;
+        min-height: 360px;
+        height: 360px;
+        top: 50%;
+        left: 50%;
+        margin-top: -180px;
+        margin-left: -290px;
+    }
+    #divLogin {
+        position:absolute;
+        width:80%;
+        left:10%;
+    }
+}
+
+@media(max-width:767px){
+    .center-login {
+        position: absolute;
+        width: 480px;
+        min-height: 340px;
+        height: 340px;
+        top: 50%;
+        left: 50%;
+        margin-top: -160px;
+        margin-left: -240px;
+    }
+    #divLogin {
+        position:absolute;
+        width:80%;
+        left:10%;
+    }
+}
+
+@media(max-width:499px){
+    .center-login {
+        position: absolute;
+        width: 340px;
+        height: 280px;
+        min-height: 280px;
+        top: 50%;
+        left: 50%;
+        margin-top: -140px;
+        margin-left: -170px;
+    }
+    #divLogin {
+        position:absolute;
+        width:80%;
+        left:10%;
+    }
+}
+
+#dialogoverlay{
+	display: none;
+	opacity: .8;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 10;
+}
+#dialogbox{
+	display: none;
+	position: fixed;
+	background: #000;
+	border-radius:7px; 
+	width:550px;
+	z-index: 10;
+}
+#dialogbox > div{ background:#FFF; margin:8px; }
+#dialogbox > div > #dialogboxhead{ background: #666; font-size:19px; padding:10px; color:#CCC; }
+#dialogbox > div > #dialogboxbody{ background:#333; padding:20px; color:#FFF; }
+#dialogbox > div > #dialogboxfoot{ background: #666; padding:10px; text-align:right; }

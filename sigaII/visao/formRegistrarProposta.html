@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <link rel="stylesheet" href="css/formRegistrarProposta.css">
+        <script src="js/compras/formRegistrarProposta.js"></script>
+    </head>
+    <body>
+        
+        <div id="divFormRegistrarProposta"  class="labelCampoFormulario">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">
+                    <h3>REGISTRO DE PROPOSTAS</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <fieldset class="well">
+                                <legend class="well-legend">Dados do Fornecedor</legend>
+                                <div id="divFormPesquisarFornecedor" class="labelCampoFormulario">
+                                    <form id="formPesquisarFornecedor" name="formPesquisarFornecedor" method="POST" action="">
+                                        <input type="text" id="urlFornecedor" value="../servlets/cadastros/ServletFornecedor.php" readonly="" hidden=""/>
+                                        <!--<button type="button" id="botaoAbriCadastroFornecedor" class="botaoNovo">Cadastro Fornecedor</button>-->
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-inline">
+                                                        <input type="radio" name="tipoFornecedor" class="tipoFornecedor" id="checkboxPJ" value="pj" checked="" /><label>Pessoa Jurídica</label>
+                                                        <input type="radio" name="tipoFornecedor" class="tipoFornecedor" id="checkboxPF" value="pf"/><label>Pessoa Física</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    <label for="numeroOCS">Numero</label>
+                                                    <input type="text" id="documentoFornecedor"  class="dadosFornecedor form-control" name="documentoFornecedor" required="" placeholder="Somente numeros"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3 button-aln">
+                                                <div class="form-group">
+                                                    <button type="submit" class="botaoPesquisar btn btn-primary" id="pesquisarFornecedorCadasrado" style="margin-left: 0">Pesquisar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="reset" id="reset">reset</button>
+                                        
+                                    </form>
+                                    
+                                        <fieldset class="well">
+                                            <div class="table-responsive">
+                                                <table class="tabela-dados-fornecedor table table-condensed">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>CPF:</th>
+                                                            <td><span class="" id="spanDocumentoFornecedor"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Fornecedor:</th>
+                                                            <td><span class="" id="spanNomeFornecedor"></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                        </fieldset>
+                                    
+                                </div>
+                            </fieldset>
+                            
+                            
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <fieldset class="well">
+                                <legend class="well-legend">Dados da proposta</legend>
+
+                                <form id="formRegistrarProposta" name="formRegistrarProposta" method="POST" action="">
+                                    <span hidden="">
+                                        <input type="text" id="urlProposta" value="../servlets/compras/ServletProposta.php" readonly=""/>
+                                        <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                                        <input type="text" id="opcao" name="opcao" value="inserir" placeholder="opcao" readonly=""/>
+                                        <input type="text" id="fornecedorId" name="fornecedorId" value="" placeholder="fornecedorId" readonly="" required=""/>
+                                        <input type="text" id="processoCompraId" name="processoCompraId" value="" placeholder="processoCompraId" readonly="" required=""/>
+                                        <input type="text" id="modalidadeId" name="modalidadeId" value="" placeholder="modalidadeId" readonly="" required=""/>
+                                        <input type="text" id="tipoFornecedor" name="tipoFornecedor" value="" placeholder="tipoFornecedor" readonly="" required=""/>
+                                    </span>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="nome">Número da Proposta</label>
+                                                <input type="text" id="numeroProposta" name="numero" placeholder="Numero da proposta" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nome">Data da Proposta</label>
+                                                <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nome">Valor da Proposta</label>
+                                                <input type="text" id="valor" name="valor" class="form-control" readonly="" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" id="botaoSalvarProposta" class="botaoSalvar btn btn-primary pull-right">Salvar</button>
+                                    <button type="button" id="botaoCancelarProposta" class="botaoCancelar btn btn-danger pull-right" >Cancelar</button>
+                                    <button type="reset" id="reset">reset</button>
+
+                                </form>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="panel panel-info panel-cad-mat-con" style="margin-top: 25px">
+                        <div class="panel-heading">
+                            <h3>Itens do Processo</h3>
+                        </div>
+                        <div id="divTabelaPropostaLotes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="divCadastroFornecedor" class="labelCampoFormulario" hidden="">
+            <button id="botaoFechardivCadastroFornecedor" type="button" class="botaoVoltar">Fechar</button>
+            <fieldset>
+                <legend>Cadastro fornecedores</legend>
+                <div id="divPainelCadastroFornecedores"></div>
+            </fieldset>
+        </div>
+    </body>
+</html>

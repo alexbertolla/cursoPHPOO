@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFontes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+
+        <script src="js/jquery.js"></script>
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/cadastros/formCadItem.js"></script>
+        <script src="js/cadastros/formCadMaterialPermanente.js"></script>
+    </head>
+    <body>
+        <div class="panel panel-primary panel-head-cad-mat">
+            <div class="panel-heading text-center">
+                <h3>MATERIAL PERMANENTE</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" id="txtPesquisaItem" class="form-control input-pesquisa" placeholder="Pesquisa..."/>
+                    </div>
+                    <button type="button" id="botaoPesquisarMP" class="btn btn-primary">Pesquisar</button>
+
+                    <button type="button" id="botaoNovoMP" class="btn btn-success pull-right">Novo</button>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span id="spanListaMaterialPermanenteCadastrados" class="labelCampoFormulario lista-itens-cad"></span>
+            </div>
+        </div>
+        <!--
+        <div id="divCadastroAuxiliarMaterialPermanente" class="cadastroAuxiliar">
+            <button id="fecharCadastroAuxiliar" type="button" class="botaoFechar">Fechar</button>
+            <span id="spanCadastroAuxiliarMaterialPermanente"></span>
+        </div>
+        
+        <!--<input type="text" id="naturezaDespesaId" placeholder="naturezaDespesaId" value="" readonly="" hidden="">-->
+
+        <div id="divFormCadMaterialPermanente" class="labelCampoFormulario">
+            <form id="formCadMaterialPermanente" name="formCadMaterialPermanente" method="post" action="">
+                <div class="panel panel-primary panel-cad-mat-per">
+                    <div class="panel-heading text-center">
+                        <h3>CADASTRO DE MATERIAL PERMANENTE</h3>
+                    </div>
+                    <div class="panel-body">
+
+                            <span hidden="">
+                                <input type="text" id="url" value="../servlets/cadastros/ServletMaterialPermanente.php" readonly=""/>
+                                <input type="text" id="id" name="id" placeholder="id" readonly=""/>
+                                <input type="text" id="opcao" name="opcao" value="" placeholder="opcao" readonly=""/>
+                                <input type="text" id="naturezaDespesaId" name="naturezaDespesaId" placeholder="naturezaDespesaId" readonly="" >
+                                <input type="text" id="tipoNaturezaDespesa" name="tipoNaturezaDespesa" value="materialPermanente"  placeholder="tipoNaturezaDespesa" readonly=""/>
+                                <input type="text" id="urlGrupo" value="../servlets/cadastros/ServletGrupo.php" readonly="" hidden=""/>
+                                <input type="text" id="urlAlmoxarifadoVirtual" value="../servlets/cadastros/ServletAlmoxarifadoVirtual.php" readonly="" hidden=""/>
+                            </span>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="checkbox" id="situacao" name="situacao" value="1" checked="">
+                                        <span>ATIVO</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="selectGrupo">Grupo</label>
+                                        <select id="selectGrupo" name="grupoId" class="form-control"></select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="selectAlmoxarifadoVirtual">Almoxarifado Virtual</label>
+                                        <select id="selectAlmoxarifadoVirtual" name="almoxarifadoVirtualId" class="form-control"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 
+                            <ul class="liFormulario">
+                                <li>
+                                    <label id="labelGrupo">Grupo</label>
+                                    <select id="selectGrupo" name="grupoId"></select>
+                                    <button type="button" id="botaoAddGrupo" class="botaoNovo">+</button>
+                                </li>
+                            </ul>
+                            <ul class="liFormulario">
+                                <li>
+                                    <label id="labelAlmoxarifadoVirtual">Almoxarifado Virtual</label>
+                                    <select id="selectAlmoxarifadoVirtual" name="almoxarifadoVirtualId"></select>
+                                    <button type="button" id="botaoAddAV" class="botaoNovo">+</button>
+                                </li>
+                            </ul>
+                            -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" id="nome"  class="form-control" name="nome" required="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="descricao">Descrição</label>
+                                        <textarea id="descricao" name="descricao" class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="marca">Marca</label>
+                                        <input type="text" id="marca" name="marca" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="form-group">
+                                        <label for="modelo">Modelo</label>
+                                        <input type="text" id="modelo" name="modelo" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md4">
+                                    <div class="form-group">
+                                        <label for="partNumber">Part Number</label>
+                                        <input type="text" id="partNumber" name="partNumber" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <div class="form-inline">
+                                            <div class="input-group">
+                                                <input type="checkbox" id="sustentavel" name="sustentavel" value="1">
+                                            </div>
+                                            <div class="input-group">
+                                                <span>Sustentavel</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                    <div class="panel-footer text-right">
+                        <button type="reset" id="reset">reset</button>
+                        <button type="button" id="botaoCancelar" class="btn btn-danger">Cancelar</button>
+                        <button type="submit" id="botaoSalvar" class="btn btn-primary">Salvar</button>
+                    </div>
+                
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

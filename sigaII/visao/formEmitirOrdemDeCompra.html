@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="css/estiloFontes.css">-->
+        <!--<link rel="stylesheet" href="css/estiloBotoes.css">-->
+        <!--<link rel="stylesheet" href="css/estiloFormularios.css">-->
+        <link rel="stylesheet" href="css/formEmitirOrdemDeCompra.css">
+        <!--<script src="js/jquery.js"></script>-->
+        <!--<script src="js/acaoFormularios.js"></script>-->
+        <script src="js/compras/formEmitirOrdemDeCompra.js"></script>
+        <style>
+            #tabelaItemOrdemDeCompra{
+                border: 1px solid blue;
+            }
+            #tabelaItemOrdemDeCompra tr{
+                border: 1px solid black;
+            }
+            
+            .divItemIndividual{
+                width: 100%;
+                border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="divTituloFormulario">
+            <label id="labelTituloFormulario">Emissão de Ordem de Compra / Serviço</label>
+        </div>
+
+        <div id="divOrdemDeComprasCadastradas" class="labelCampoFormulario">
+            <p><button  type="button" id="botaoFecharEmissaoOCS" class="botaoVoltar">Voltar</button></p>
+            <table id="tabelaFornecedores">
+                <thead><tr><th id="thDocumentoFornecedor">CNPJ/CPF</th><th id="thNomeFornecedor">Fornecedor</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="divFormEmitirOrdemDeCompra">
+            <form id="formEmitirOrdemDeCompra" name="formEmitirOrdemDeCompra" class="labelCampoFormulario">
+                <button type="button" id="botaoInicializar" hidden=""></button>
+                <div >
+                    <input type="text" id="urlOrdemDeCompra" value="../servlets/compras/ServletOrdemDeCompra.php" readonly=""/>
+                    <input type="text" id="urlPedidoOCS" value="../servlets/compras/ServletPedido.php" readonly=""/>
+                    <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                    <input type="text" id="opcao" name="opcao" value="emitir" placeholder="opcao" readonly=""/>
+                    <input type="text" id="fornecedorId" name="fornecedorId" value="" placeholder="fornecedorId" readonly="" required=""/>
+                    <input type="text" id="processoCompraId" name="processoCompraId" value="" placeholder="processoCompraId" readonly="" required=""/>
+                    <input type="text" id="modalidadeId" name="modalidadeId" value="" placeholder="modalidadeId" readonly="" required=""/>
+                    <input type="text" id="situacaoId" name="situacaoId" value="" placeholder="situacaoId" readonly="" required=""/>
+                    <input type="text" id="tipoFornecedor" name="tipoFornecedor" value="" placeholder="tipoFornecedor" readonly="" required=""/>
+
+                </div>
+                <fieldset>
+                    <legend>Identificação do Fornecedor</legend>
+                    <ul class="liFormulario">
+                        <li>Fornecedor: <span class="spanFormulario" id="spanFornecedorNome"></span></li>
+                        <li>CNPJ/CPF: <span class="spanFormulario" id="spanFornecedorDocumento"></span></li>
+                    </ul>
+                    <fieldset>
+                        <legend>Endereço</legend>
+                        <ul class="liFormulario">
+                            <li>Endereço: <span class="spanFormulario" id="spanEndereco"></span></li>
+                            <li>Complemento: <span class="spanFormulario" id="spanEnderecoComplemento"></span></li>
+                            <li>Bairro: <span class="spanFormulario" id="spanEnderecoBairro"></span></li>
+                            <li>Cidade: <span class="spanFormulario" id="spanEnderecoCidade"></span></li>
+                            <li>Estado: <span class="spanFormulario" id="spanEnderecoEstado"></span></li>
+                            <li>CEP: <span class="spanFormulario" id="spanEnderecoCEP"></span></li>
+                            <li>País: <span class="spanFormulario" id="spanEnderecoPais"></span></li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dados Bancários</legend>
+                        <ul>
+                            <li><select id="selectDadosBancario"></select></li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <label>Dados Empenho</label>
+                        <table id="tabelaEmpenho">
+                            <thead>
+                                <tr>
+                                    <th id="thNumeroEmpenho">Nº Empenho</th><th id="thDataEmpenho">Data</th>
+                                    <th id="thUOEmpenho">Unidade Orc.</th><th id="thFonteEmpenho">Fonte</th>
+                                    <th id="thPAEmpenho">PA</th><th id="thValorEmpenho">Valor(R$)</th><th id="thNDEmpenho">Natureza Despesa</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Prazo Acordado</legend>
+                        <ul class="liFormulario">
+                            <li>
+                                <label>Prazo acordado(em dias)</label>
+                                <input type="text" id="prazo" name="prazo" value="30" placeholder="" required=""/>
+                            </li>
+                        </ul>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <legend>Itens</legend>
+                    <table id="tabelaItemOrdemDeCompra">
+                        <thead>
+                            <tr>
+                                <th id="thCodigoItem">Código</th><th id="thDescricaoItem">Descrição</th>
+                                <th id="thQuantidadeItem">Quantidade</th><th id="thValorUnitarioItem">Valor Unitátio</th>
+                                <th id="thValorTotalItem">Valor Total</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <!--<tfoot><tr><td colspan="4">Total</td><td></td></tr></tfoot>-->
+                    </table>
+                </fieldset>
+
+                <ul>
+                    <li>
+                        <button type="submit" id="botaoEmitirOrdemDeCompra">Emitir Ordem de Compra</button>    
+
+                        <button type="button" id="botaoCancelar">Cancelar</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div id="divAssitaturaFornecedor" class="labelCampoFormulario">
+            <form  id="formAssinaturaFornecedor">
+                <ul id="liFormulario">
+                    <li>
+                        <label>OCS:</label>
+                        <span class="spanInfoOCS ocsNumero"></span>
+                    </li>
+                    <li>
+                        <label>Fornecedor:</label>
+                        <span class="spanInfoOCS ocsFornecedor"></span>
+                    </li>
+                    <li>
+                        <label for="dataAssinatura">Data assinatura:</label>
+                        <input type="text" id="dataAssinatura" required="" readonly=""/>
+                    </li>
+                    <li>
+                        <button type="button" id="salvarAssinatura" class="botaoSalvar">Salvar</button>
+                        <button type="button" class="botaoVoltar">Voltar</button>
+                        <button type="reset" id="reset">reset</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div id="divAlterarPrazo" class="labelCampoFormulario">
+            <form  id="formAlterarPrazo">
+                <ul class="liFormulario">
+                    <li>
+                        <label>OCS:</label>
+                        <span class="spanInfoOCS ocsNumero"></span>
+                    </li>
+                    <li>
+                        <label>Fornecedor:</label>
+                        <span class="spanInfoOCS ocsFornecedor"></span>
+                    </li>
+                    <li>
+                    <li>
+                        <label for="novoPrazo">Novo prazo (em dias):</label>
+                        <input type="text" id="novoPrazo" required="" />
+                    </li>
+                    <li>
+                        <label for="novoPrazo">Justificativa:</label>
+                        <textarea id="justificativa"></textarea>
+                    </li>
+                    <li>
+                        <button type="button" id="salvarNovoPrazo" class="botaoSalvar">Salvar</button>
+                        <button type="button" class="botaoVoltar">Voltar</button>
+                        <button type="reset" id="reset">reset</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </body>
+</html>

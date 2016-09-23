@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/compras/pedidoAtividade.js"></script>
+    </head>
+    <body>
+        <div id="divPedidoAtividade">
+            <div hidden="">
+                <input type="text" id="urlPedidoAtividade" value="../servlets/compras/ServletPedidoAtividade.php" readonly=""/>
+                <input type="text" id="urlItemPedido" value="../servlets/compras/ServletItemPedido.php" readonly=""/>
+                <input type="text" id="pedidoId" name="pedidoId" value="" placeholder="pedidoId" readonly=""/>
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Histórico do Pedido</h3>
+                </div>
+
+                <div class="panel-footer">
+                    <table id="tabelaPedidoAtividade" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th id="dataAtividade" class="text-center">Data</th>
+                                <th id="horaAtividade" class="text-center">Hora</th>
+                                <th id="responsavelAtividade">Atividade</th>
+                                <th id="atividadeAtividade">Responsável</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3>Situação por Item</h3>
+                </div>
+
+                <div class="panel-footer">
+                    <table id="tabelaItemSituacao" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th id="thCodigoItem" class="text-center">Código</th>
+                                <th id="thDescricaoItem">Descrição</th>
+                                <th id="thSituacaoItem">Situação</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

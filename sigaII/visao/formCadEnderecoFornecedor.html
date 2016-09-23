@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/cadastros/formCadEnderecoFornecedor.js"></script>
+    </head>
+    <body>
+        <form id="formCadEnderecoFornecedor"  class="labelCampoFormulario">
+            <span hidden="">
+                <input type="text" id="url" value="../servlets/cadastros/ServletEndereco.php" readonly=""/>
+                <!--<input type="text" id="id" name="id" value="" readonly="" placeholder="id"/>-->
+                <input type="text" id="fornecedorId" name="fornecedorId" value="" readonly="" placeholder="fornecedorId"/>
+                <input type="text" id="opcao" name="opcao" value="inserir" readonly="" placeholder="opcao"/>
+            </span>
+
+            <div class="row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                      <label for="cep">CEP</label>
+                      <input type="text" id="cep" class="form-control" name="cep" required="" placeholder="Somente numeros...">
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="button" id="botaoBuscarCep" style="margin-top: 25px">Pesquisar</button>
+            </div>
+
+            <div class="row">
+              <div class="col-md-9">
+                  <div class="form-group">
+                      <label for="logradouro">Logradouro</label>
+                      <input type="text" id="logradouro" name="logradouro" required="" class="form-control">
+                  </div>
+              </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="numero">Número</label>
+                        <input type="text" id="numero" name="numero" required="" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="complemento">Complemento</label>
+                      <input type="text" id="complemento" name="complemento" required="" class="form-control">
+                  </div>
+              </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" required="" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="cidade">Cidade</label>
+                      <input type="text" id="cidade" name="cidade" required="" class="form-control">
+                  </div>
+              </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado" required="" class="form-control" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="pais">Pais</label>
+                        <input type="text" id="pais" name="pais" required="" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </body>
+</html>

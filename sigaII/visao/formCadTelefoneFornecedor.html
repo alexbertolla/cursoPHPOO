@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloBotoes.css">
+    <link rel="stylesheet" href="css/estiloFormularios.css">
+    <script src="js/cadastros/formCadTelefoneFornecedor.js"></script>
+</head>
+
+<body>
+    <div id="divFormCadastro" class="labelCampoFormulario">
+
+        <form id="formCadTelefoneFornecedor" name="formCadTelefoneFornecedor" method="post" action="">
+            <span hidden="">
+                    <input type="text" id="url" value="../servlets/cadastros/ServletTelefone.php" readonly=""/>
+                    <!--<input type="text" id="id" name="id" value="" readonly="" placeholder="id"/>-->
+                    <input type="text" id="fornecedorId" name="fornecedorId" readonly="" placeholder="fornecedorId"/>
+                    <input type="text" id="opcao" name="opcao" value="inserir" readonly="" placeholder="opcao"/>
+                </span>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="ddi">DDI</label>
+                                <input type="text" id="ddi" name="ddi" value="55" required="" maxlength="3" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label for="ddd">DDD</label>
+                                <input type="text" id="ddd" name="ddd" required="" maxlength="2" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="numeroTelefone">Numero</label>
+                                <input type="text" id="numeroTelefone" name="numeroTelefone" required="" maxlength="10" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                                <button type="button" class="btn btn-success pull-right" id="incluirTelefone" style="margin-top: 25px">Incluir</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="reset" id="reset">reset</button>
+            <!--<button type="submit" id="botaoSalvar">Salvar</button>-->
+        </form>
+    </div>
+    
+    
+        
+    </div>
+    
+    <div class="row">
+        <div id="divListaTelefonesCadastrados" class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h5> Telefones Cadastrados</h5>
+                </div>
+                <table id="tabelaTelefones" class="table table-condensed">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

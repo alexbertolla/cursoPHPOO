@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <link rel="stylesheet" href="css/dimensoes.css">
+        <link rel="stylesheet" href="css/estiloFontes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/cadastros/formCadItemControlado.js"></script>
+    </head>
+    <body>
+
+        <div id="divListaItensControladosCadastrados">
+          <div class="panel panel-primary panel-head-cc">
+              <div class="panel-heading text-center">
+                  <h3>ITEM CONTROLADO</h3>
+              </div>
+              <div class="panel-body">
+                  <div class="form-inline">
+                      <div class="form-group">
+                          <input type="text" id="txtPesquisaIC" class="form-control input-pesquisa" placeholder="Pesquisa..." />
+                      </div>
+                      <button type="button" id="botaoPesquisarIC" class="btn btn-primary">Pesquisar</button>
+                      <button type="button" id="botaoNovoIC" class="btn btn-success pull-right">Novo</button>
+                  </div>
+              </div>
+              <div class="panel-footer">
+                  <span id="spanListaItensControladosCadastrados" class="labelCampoFormulario lista-itens-cad"></span>
+              </div>
+          </div>
+        </div>
+
+        <div id="divFormCadItemControlado" class="labelCampoFormulario">
+            <form id="formCadItemControlado" name="formCadItemControlado" method="POST">
+              <div class="panel panel-primary panel-cad-cc">
+                  <div class="panel-heading text-center">
+                      <h3>CADASTRO - ITEM CONTROLADO</h3>
+                  </div>
+                  <div class="panel-body">
+                      <span hidden="">
+                          <input type="text" id="url" value="../servlets/cadastros/ServletItemControlado.php" readonly=""/>
+                          <input type="text" id="id" name="id" value=""  placeholder="id" readonly=""/>
+                          <input type="text" id="urlGrupo" value="../servlets/cadastros/ServletGrupo.php" readonly="" hidden=""/>
+                          <input type="text" id="urlOrgaoControlador" value="../servlets/cadastros/ServletOrgaoControlador.php" readonly="" hidden=""/>
+                          <input type="text" id="opcao" name="opcao" value="" placeholder="opcao" readonly=""/>
+                      </span>
+
+                      <div class="form-group">
+                          <input type="checkbox" id="situacao" name="situacao" value="1" checked="">
+                          <span>ATIVO</span>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="selectGrupo">Grupo</label>
+                          <select id="selectGrupo" name="grupoId" class="form-control"></select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="selectOrgaoControlador">Orgão Controlador</label>
+                          <select id="selectOrgaoControlador" name="orgaoControladorId" class="form-control"></select>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="modelo">Nome</label>
+                          <input type="text" id="nome" name="nome" required="" class="form-control">
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="quantidade">Quantidade</label>
+                                  <input type="text" id="quantidade" name="quantidade" required="" class="form-control">
+                              </div>
+                          </div>
+
+                          <div class="col-md-9">
+                              <div class="form-group">
+                                  <label for="apresentacaoComercial">Apresentação Comercial</label>
+                                  <input type="text" id="apresentacaoComercial" name="apresentacaoComercial" required="" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="fonte">Fonte</label>
+                          <input type="text" id="fonte" name="fonte" required="" class="form-control">
+                      </div>
+
+                  </div>
+                  <div class="panel-footer text-right">
+                      <button type="reset" id="reset">reset</button>
+                      <button type="button" id="botaoCancelar" class="btn btn-danger">Cancelar</button>
+                      <button type="submit" id="botaoSalvar" class="btn btn-primary">Salvar</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

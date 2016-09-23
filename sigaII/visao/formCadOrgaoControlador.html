@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dimensoes.css">
+    <link rel="stylesheet" href="css/estiloFontes.css">
+    <link rel="stylesheet" href="css/estiloBotoes.css">
+    <link rel="stylesheet" href="css/estiloFormularios.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/acaoFormularios.js"></script>
+    <script src="js/cadastros/formCadOrgaoControlador.js"></script>
+</head>
+
+<body>
+    <div id="divTituloFormulario">
+        <label id="labelTituloFormulario">ORGÃO CONTROLADOR</label>
+    </div>
+
+    <div id="divOrgaoControladoresCadastrados">
+        <div class="panel panel-primary panel-head-cc">
+            <div class="panel-heading text-center">
+                <h3>ORGÃO CONTROLADOR</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input type="text" id="txtPesquisaOC" class="form-control input-pesquisa" placeholder="Pesquisa..." />
+                    </div>
+                    <button type="button" id="botaoPesquisarOC" class="btn btn-primary">Pesquisar</button>
+                    <button type="button" id="botaoNovoOC" class="btn btn-success pull-right">Novo</button>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span id="spanOrgaoControladoresCadastrados" class="labelCampoFormulario lista-itens-cad"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="divFormCadOrgaoControlador" class="labelCampoFormulario">
+        <form id="formCadOrgaoControlador" name="formCadOrgaoControlador" method="POST">
+            <div class="panel panel-primary panel-cad-cc">
+                <div class="panel-heading text-center">
+                    <h3>CADASTRO - ORGÃO CONTROLADOR</h3>
+                </div>
+                <div class="panel-body">
+                    <span hidden="">
+                        <input type="text" id="url" value="../servlets/cadastros/ServletOrgaoControlador.php" readonly=""/>
+                        <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                        <input type="text" id="opcao" name="opcao" value="" placeholder="opcao" readonly=""/>
+                    </span>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="situacao" name="situacao" value="1" checked="">
+                        <span>ATIVO</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modelo">Nome</label>
+                        <input type="text" id="nome" name="nome" required="" class="form-control">
+                    </div>
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="reset" id="reset">reset</button>
+                    <button type="button" id="botaoCancelar" class="btn btn-danger">Cancelar</button>
+                    <button type="submit" id="botaoSalvar" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

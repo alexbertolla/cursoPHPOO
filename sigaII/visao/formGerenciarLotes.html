@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <link rel="stylesheet" href="css/estiloFontes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">-->
+        <link rel="stylesheet" href="css/formGerenciarLotes.css">
+        <!--<script src="js/jquery.js"></script>-->
+        <!--<script src="js/acaoFormularios.js"></script>-->
+        <script src="js/compras/formGerenciarLotes.js"></script>
+    </head>
+    <body>
+        <div id="gerenciarLotes">
+            <form id="formGerenciarLotes" class="labelCampoFormulario">
+                <div hidden="">
+                    <input type="text" id="urlLote" value="../servlets/compras/ServletLoteProcessoCompra.php" readonly=""/>
+                    <input type="text" id="loteId" name="loteId" value="" placeholder="loteId" readonly=""/>
+                </div>
+                <ul>
+                    <li>
+                        <select id="selectLote" name="loteId"></select>
+                        <button type="button" id="novoLote" class="botaoNovo">Novo</button>
+                    </li>
+                    <li>
+                        <button  type="button" id="botaoFecharFormlote" class="botaoVoltar">Voltar</button>
+                        <button  type="button" id="botaoIncluirTodosItemProcesso" class="botaoSelecionar" >Incluir Selecionados</button>
+                    </li>
+                </ul>
+                <table id="tabelaLoteZero">
+                    <thead>
+                        <tr>
+                            <th id="thSelecionarItemLoteZero"><input type="checkbox" id="selecionarTodosItemProcesso"/></th>
+                            <th id="thCodigoItemLoteZero">Código</th>
+                            <th id="thDescricaoItemLoteZero">Descrição</th>
+                            <th id="thQuantidadeItemLoteZero">Quantidade</th>
+                            <th id="thBotoesItemLoteZero"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

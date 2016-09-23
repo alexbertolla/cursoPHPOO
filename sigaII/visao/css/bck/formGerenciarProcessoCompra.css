@@ -1,0 +1,166 @@
+#tabeProcessosCadastrados, #tabelaItemProcesso, #tabelaListaIntesPedido, #tabelaLoteZero, .tabelaItemProcesso{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+th{
+    text-align: center;
+    /*background-color: whitesmoke;*/
+}
+
+th, td{
+    border: .1rem solid black;
+}
+
+tbody{
+    /*background-color: linen;*/
+}
+
+tr:hover{
+    /*font-weight: bold;*/
+}
+
+/* tabela processos cadastrados*/
+#thNumeroProcesso{
+    width: 15%;
+}
+
+
+#thDataProcesso{
+    width: 5%;
+}
+
+
+#thResponsavelProcesso{
+    width: 25%;
+}
+
+#thModalidadeProcesso{
+    width: 10%;
+}
+
+#thSituacaorocesso{
+    width: 15%;
+}
+
+#thBotoesProcesso{
+    width: 30%;
+}
+
+
+.tdNumeroProcesso, .tdDataProcesso{
+    text-align: center;
+}
+
+
+.tdNumeroProcesso:hover{
+    cursor: pointer;
+}
+
+.tdResponsavelProcesso, .tdModalidadeProcesso{
+    text-align: justify;
+    padding-left: 1rem;
+}
+/*fim tabela processos cadastrados*/
+
+
+
+/* tabela pesquisa itens processo*/
+#thTituloTabela{
+    /*width: 100%;*/   
+}
+
+.thNumeroItemProcesso{
+    width: 5%;
+}
+
+.thCodigoItemProcesso{
+    width: 10%;
+}
+
+.thDescricaoItemProcesso{
+    width: 70%;
+}
+
+.thQuantidadeItemProcesso{
+    width: 5%;
+}
+
+.thBotoesItemProcesso{
+    width: 10%;
+}
+
+.tdNumeroItemProcesso, .tdCodigoItemProcesso, .tdQuantidadeItemProcesso, .tdBotaoItemProcesso{
+    text-align: center;    
+}
+
+.tdDescricaoItemProcesso{
+    text-align: justify;
+}
+/* fim tabela pesquisa itens processo*/
+
+
+
+/* tabela pesquisa itens pedidos*/
+#thSelecionarItemPesquisa{
+    width: 5%;
+}
+
+#thCodigoItemPesquisa{
+    width: 10%;
+}
+
+#thDescricaoItemPesquisa{
+    width: 70%;    
+}
+
+#thQuantidadeItemPesquisa{
+    width: 5%;
+}
+
+#thBotoesItemPesquisa{
+    width: 10%;
+}
+
+.tdSelectItemPesquisa, .tdCodigoItemPesquisa, .tdDescicaoItemPesquisa, .tdQuantidadeItemPesquisa,tdBotoesItemPesquisa{
+    text-align: center;
+}
+
+.tdDescricaoItemPesquisa{
+    text-align: justify;
+}
+/* fim tabela pesquisa itens pedidos*/
+
+
+
+
+
+
+
+
+
+#txtPesquisaProcesso, #numero, #selectModalidade{
+    width: 15rem;
+}
+
+#numeroModalidade, #numeroPedido{
+    width: 10rem;
+}
+
+#anoPedido{
+    width: 3rem;
+}
+
+#dataInicio, #dataFim{
+    width: 5rem;
+}
+
+#divAuxiliar{
+/*    border: .1rem solid green;
+    top: 8rem;
+    position: absolute;
+    float: left;
+    width: 97%;
+    background-color: white;*/
+}

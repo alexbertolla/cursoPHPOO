@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+
+        <script src="js/compras/formPedidoCompra.js"></script>
+    </head>
+    <body>
+        <div id="divPedidoDeCompra">
+            <div id="divPedidosCadastrados" class="labelCampoFormulario">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        <h3>PEDIDOS DE COMPRAS</h3>
+                    </div>
+                    <div class="panel-body">
+                      <button type="button" id="novoPedido" class="btn btn-success pull-right">Novo</button>
+                    </div>
+                </div>
+                <div id="divListaPedidosCadastrados">
+                  <div class="table-responsive">
+                    <table id="tabelaPedidosCadastrados" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th id="thDataPedido">Número</th>
+                                <th id="thNumeroPedido">Data</th>
+                                <th id="thJustificativaPedido">Justificativa</th>
+                                <th id="thSituacaoPedido">Situação</th>
+                                <th id="thAcaoPedido">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div id="divFormPedidoCompra" >
+                <form id="formPedidoCompra" method="POST" action="">
+                    <span hidden="">
+                        <input type="text" id="url" value="../servlets/compras/ServletPedido.php" readonly=""/>
+                        <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                        <input type="text" id="opcao" name="opcao" value="inserir" placeholder="opcao" readonly=""/>
+                        <input type="text" id="matriculaSolicitante" name="matriculaSolicitante"  placeholder="matriculaSolicitante" readonly=""/>
+                        <input type="text" id="pedidoBloqueado" placeholder="pedidoBloqueado"/>
+                        <input type="text" id="tipo" name="tipo"  placeholder="tipo" readonly=""/>
+                    </span>
+                    <div id="divInfoPedido">
+                      <div class="panel panel-primary">
+                          <div class="panel-heading text-center">
+                              <h3>NOVO PEDIDO DE COMPRA</h3>
+                          </div>
+                          <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="numero">Numero do pedido</label>
+                                        <input type="text" id="numero"  class="form-control" name="numero" readonly=""/>
+                                    </div>
+                                </div>
+                                <a disabled href=""><img src="imagens/print.png" alt="Imprimir pedido" class="pull-right" style="max-height: 34px; padding-right: 15px;"></a>
+                            </div>
+
+
+
+                            <input type="text" id="urlGrupo" value="../servlets/cadastros/ServletGrupo.php" readonly="" hidden=""/>
+                            <input type="text" id="naturezaDespesaId" name="naturezaDespesaId" placeholder="naturezaDespesaId" hidden=""/>
+                            <input type="text" id="grupoId" name="grupoId" readonly="" hidden=""/>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="selectGrupo">Grupo</label>
+                                        <select id="selectGrupo" class="form-control" required=""></select>
+                                    </div>
+                                </div>
+                                <input type="text" id="urlLotacao" value="../servlets/webservices/ServletLotacao.php" readonly="" hidden=""/>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="selectLotacao">Lotação</label>
+                                        <select id="selectLotacao" name="lotacaoId" class="form-control" required=""></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <datalist id="dataListPA"></datalist>
+                            <input type="text" id="urlPA" value="../servlets/webservices/ServletPA.php" readonly="" hidden=""/>
+                            <input type="text" id="ano" name="ano" value="" hidden=""/>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="codigoPA">Plano de ação</label>
+                                        <input type="text" id="codigoPA" class="form-control" placeholder="Código do PA" list="dataListPA" required=""/>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <fieldset class="well">
+                                        <legend class="well-legend">Plano de Ação</legend>
+                                        <div id="infoPA">
+                                              <input type="text" id="idPa" name="paId" value="" readonly="" hidden="" required=""/>
+                                              <div class="table-responsive">
+                                                <table class="table table-condensed">
+                                                    <tbody style="display: none">
+                                                        <tr>
+                                                            <th>Código:</th>
+                                                            <td><span id="spanCodigo"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Título:</th>
+                                                            <td><span id="spanTitulo"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Responsável:</th>
+                                                            <td><span id="spanResponsavel"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Saldo custeio:</th>
+                                                            <td><span id="spanSaldoCusteio"></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Saldo investimento:</th>
+                                                            <td><span id="spanSaldoInvestimento"></span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                              </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12" style="margin-top: -12px">
+                                    <div class="form-group">
+                                        <label for="descricao">Justificativa</label>
+                                        <textarea id="justificativa" name="justificativa" required="" class="form-control" rows="4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <h3>Lista de Itens</h3>
+                                </div>
+
+                                <div class="panel-footer">
+
+                                    <div id="divItensPedido" class="labelCampoFormulario">
+                                        <table id="tabelaItensPedido" class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th id="thNumeroItem">#</th>
+                                                    <th id="thCodigoItem">Código</th>
+                                                    <th id="thDescricaoItem">Descriçao</th>
+                                                    <th id="thQuantidadeItem">Quantidade</th>
+                                                    <th id="thBotoesItem"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                      </div>
+
+                      <div class="panel-footer">
+                        <button type="button" id="cancelar" class="btn btn-warning">Voltar</button>
+
+                        <span class="spanPedidoAberto pull-right">
+                            <button type="button" id="botaoAddItem" class="btn btn-success">Adicionar Itens</button>
+                            <button type="submit" id="botaoSalvar" class="btn btn-success">Salvar</button>
+                            <button type="button" id="botaoEnviar" class="btn btn-primary">Enviar</button>
+                            <button type="reset" id="reset">reset</button>
+                        </span>
+                        
+                      </div>
+                    </div>
+                    </div>
+                </form>
+                
+                <div id="modalConfirmItens" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"></button>
+                              <h4 class="modal-title">Adicionar Itens</h4>
+                            </div>
+                            
+                            <div class="modal-body">
+                                
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="modalItensPesquisa" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Adicionar Itens</h4>
+                            </div>
+                            
+                            <div class="modal-body">
+                              <div id="divItensPesquisa">
+                                <form name="formPesquisaItem" id="formPesquisaItem" method="POST" action="">
+
+                                    <div style="display: none">
+                                        <input type="text" id="urlItem" placeholder="urlItem" readonly="" />
+                                        <input type="text" id="urlItemPedido" value="../servlets/compras/ServletItemPedido.php" readonly=""/>
+                                    </div>
+
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                          <div class="form-inline">
+                                            <input type="text" id="txtPesquisaItem" class="form-control input-pesquisa" placeholder="digite o código, nome ou descrição"/>
+                                            <button type="submit" id="botaoPesquisarItem" class="btn btn-primary">Pesquisar</button>
+                                            <button type="reset" id="reset">reset</button>
+                                          </div>
+                                        </div>
+
+                                        <div class="panel-body" style="display: none">
+                                            <div class="table-responsive">
+                                                <table id="tabelaListaIntesCadastrados" class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th id="thSelecionarItemPesquisa"><input type="checkbox" id="checkboxSelecionarTodos" title="Selecionar todos"/></th>
+                                                            <th id="thCodigoItemPesquisa">Código</th>
+                                                            <th id="thDescricaoItemPesquisa">Descrição</th>
+                                                            <th id="thBotoesItemPesquisa">Ação</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        <div class="panel-footer" style="display: none">
+                                            <div class="form-inline">
+                                                <button type="button" id="botaoVoltar" class="btn btn-warning" data-dismiss="modal">Voltar</button>
+                                                <button id="selecionarItens" class="btn btn-primary" type="button">Incluir Selecionados</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="divAuxiliarPedido">
+            <div class="panel panel-primary panel-head-cad-mat">
+                <div class="panel-heading text-center">
+                    <h3>HISTÓRICO</h3>
+                </div>
+                <div class="panel-body">
+                    
+                <div id="divPedidoAtividade"></div>
+                </div>
+                <div class="panel-footer">
+                    <button id="voltarHistorico" class="btn btn-warning">Voltar</button>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

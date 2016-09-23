@@ -1,0 +1,65 @@
+#documentoFornecedor,#numeroProcesso, #numero, #valor{
+    width: 10rem;
+}
+
+.spanText, #valor{
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+#valor{
+    border-color: transparent; 
+    font-size: large;
+}
+
+.tabelaItemProposta{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+}
+
+#thTituloTabela{
+    /*width: 100%;*/   
+}
+
+.thNumeroItemProposta{
+    width: 5%;
+}
+
+.thCodigoItemProposta{
+    width: 5%;
+}
+
+.thDescricaoItemProposta{
+    width: 70%;
+}
+
+.thQuantidadeItemProposta{
+    width: 5%;
+}
+
+.thValorUnitario, .thValorTotal{
+    width: 5%;
+}
+
+.thBotoesItemProposta{
+    width: 5%;
+}
+
+.tdNumeroItemProposta, .tdCodigoItemProposta, .tdQuantidadeItemProposta, .tdBotaoItemProposta, .tdValorUnitario, .tdValorTotal, .tdFootQuantidade{
+    text-align: center;    
+}
+
+.tdDescricaoItemProposta{
+    text-align: justify;
+}
+
+.tdFootValorTotal{
+    text-align: center;
+}
+
+.textValorUnitario, .textValorTotal{
+    width: 5rem;
+    text-align: right;
+}

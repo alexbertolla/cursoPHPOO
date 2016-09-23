@@ -1,0 +1,50 @@
+
+#tabelaLoteZero{
+    border-collapse: collapse;
+    width: 100%;   
+}
+
+th{
+    text-align: center;
+}
+
+th, td{
+    border: .1rem solid black;
+    /*background-color: whitesmoke;*/
+}
+
+th, tr{
+    height: 2rem;
+}
+
+tr:hover{
+    font-weight: bold;
+}
+
+#thSelecionarItemLoteZero{
+    width: 5%;
+}
+
+#thCodigoItemLoteZero{
+    width: 10%;
+}
+
+#thDescricaoItemLoteZero{
+    width: 70%;    
+}
+
+#thQuantidadeItemLoteZero{
+    width: 5%;
+}
+
+#thBotoesItemLoteZero{
+    width: 10%;
+}
+
+.tdSelectItemLoteZero, .tdCodigoItemLoteZero, .tdDescicaoItemLoteZero, .tdQuantidadeItemLoteZero,tdBotoesItemLoteZero{
+    text-align: center;
+}
+
+.tdDescricaoItemLoteZero{
+    text-align: justify;
+}

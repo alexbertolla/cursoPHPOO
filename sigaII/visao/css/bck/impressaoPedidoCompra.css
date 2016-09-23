@@ -1,0 +1,81 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.fontInfoPedido{
+    font-size: 1rem;
+}
+
+.fontTabelaItemPedido{
+    font-size: .8rem;
+}
+
+#tabelaCabecalho, #tabelaInfoPedido, #tabelaItensPedido, #tabelaAssinatura{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+#tabelaCabecalho, #tabelaInfoPedido{
+    border-collapse: collapse;
+}
+
+
+
+.tdTitulo{
+    text-align: center;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-bottom: .1rem solid black;
+}
+
+#imgLogoSistema{
+    height: 5em;
+}
+
+#tdLogoSistema{
+    text-align: center;
+}
+
+#tabelaItensPedido th{
+    border-bottom: .1rem solid black;
+}
+
+#tabelaItensPedido{
+    border-top: .1rem solid black;
+    border-bottom: .1rem solid black;
+}
+
+#thCodigoItem, #thQuantidadeItem{
+    width: 12%;
+    text-align: center;
+}
+
+#thDescricaoItem{
+    text-align: center;
+    width: 78%
+}
+
+#tdCodigoItem, #tdQuantidadeItem{
+    text-align: center;
+}
+
+#tabelaAssinatura{
+    /*float: bottom;*/
+    margin-top: 5rem;
+}
+
+#tdAssSolicitante, #tdAssChefia{
+
+    text-align: center;
+}
+
+
+#tdAssSolicitante, #tdAssChefia{
+    width: 30%;
+    border-top: .1rem solid black;
+}
+#tdVazio{
+    width: 30%;
+}

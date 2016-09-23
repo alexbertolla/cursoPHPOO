@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFontes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/configuracao/formConfigurarSistema.js"></script>
+    </head>
+    <body>
+        <div id="divFormConfigurarSistema">
+            <form id="formConfigurarSistema" class="labelCampoFormulario">
+                <div class="panel panel-primary panel-head-cad-mat">
+                    <div class="panel-heading text-center">
+                        <h3>CONFIGURAÇÕES DO SISTEMA</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div hidden="">
+                            <input type="text" id="url" value="../servlets/configuracao/ServletSistema.php" readonly=""/>
+                            <input type="text" id="opcao" name="opcao" value="alterar" readonly=""/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="anoSistema">Ano do Sistema</label>
+                                    <input type="text" id="anoSistema" name="anoSistema" maxlength="10" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="checkbox" id="liberado" name="liberado" value="1" checked=""/>
+                                    <span>Sistema Liberado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button type="submit" id="botaoSalvar" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

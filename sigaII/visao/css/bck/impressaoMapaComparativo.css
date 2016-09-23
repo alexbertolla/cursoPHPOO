@@ -1,0 +1,196 @@
+body{
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.titulo{
+    text-align: center;
+}
+
+#imgLogoSistema{
+    text-align: center;
+    height: 5em;
+}
+
+#tdLogoSistema{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+th{
+    font-size: 12px;
+}
+
+td{
+    font-size: 12px;
+}
+
+.tabelaItemProcesso, .tablelaVencedores, #tabelaPA, #tabelaND, #tabelaGrupo{
+    border: 1px solid black;
+}
+
+
+.thCodigo{
+    width: 10%;
+}
+
+.thDescricao{
+    width: 70%;
+}
+
+.thQuantidade{
+    width: 10%;
+}
+
+.tdCodigo, .tdQuantidade{
+    text-align: center;
+}
+
+
+.thDocumento{
+    width: 10%;
+}
+
+.thFornecedor{
+    width: 80%;
+}
+
+.thValor{
+    width: 5%;
+}
+
+.tdDocumento, .tdFornecedor{
+    text-align: justify
+}
+
+.tdValor{
+    text-align: center;
+}
+
+
+.tabelaItemProposta th, .tablelaVencedores th{
+    border-bottom: 1px solid black;
+}
+
+
+
+.tablelaVencedores .thDocumento{
+    width: 15%;
+}
+
+
+.tablelaVencedores .thFornecedor{
+    width: 70%;
+}
+
+.tablelaVencedores .thVazio{
+    width: 15%;
+}
+
+.tabelaItemProcessoVencedor .thCodigo, .tabelaItemProcessoVencedor .thValor{
+    width: 15%;
+}
+
+.tabelaItemProcessoVencedor .tdValor{
+    text-align: center;
+}
+
+.tabelaItemProcessoVencedor .thDescricao{
+    width: 70%;
+}
+
+.quebraDePagina{
+    page-break-before: always;
+}
+
+
+.tdValorTotal{
+    text-align: right;
+}
+
+.tdSomaValorTotal{
+    text-align: center;
+}
+
+#tabelaPA th{
+    border-bottom: 1px solid black;
+}
+
+
+#tabelaPA .thCodigo{
+    width: 15%
+}
+
+
+#tabelaPA .thTitulo{
+    width: 30%
+}
+
+#tabelaPA .thResposanvel{
+    width: 40%;
+}
+
+#tabelaPA .thValor{
+    width: 15%;
+}
+
+#tabelaND th, #tabelaGrupo th{
+    border-bottom: 1px solid black;
+}
+
+#tabelaND .thCodigo, #tabelaGrupo .thCodigo{
+    width: 15%
+}
+
+
+#tabelaND .thNome, #tabelaGrupo .thNome{
+    width: 70%
+}
+
+
+#tabelaND .thValor, #tabelaGrupo .thValor{
+    width: 15%;
+}
+
+
+#tabelaAssinatura{
+    margin-top: 50px;
+}
+
+#tdAssSolicitante, #tdAssChefia{
+    text-align: center;
+}
+
+
+#tdAssSolicitante, #tdAssChefia{
+    width: 30%;
+    border-top: .1rem solid black;
+}
+#tdVazio{
+    width: 30%;
+}
+
+#tabelaAssinaturaChefia{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.tabelaDispensa{
+    border-bottom: 1px solid black;
+}
+
+
+blockquote{
+    width: 100%;
+    font-size: 12px;
+    text-align: justify;
+    /*font-style: italic;*/
+    /*margin-bottom: 50px;*/
+    /*border-top: 1px solid black;*/
+    /*border-bottom: 1px solid black;*/
+}

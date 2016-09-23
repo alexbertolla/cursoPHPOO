@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estiloBotoes.css">
+    <link rel="stylesheet" href="css/estiloFormularios.css">
+
+    <script src="js/acaoFormularios.js"></script>
+    <script src="js/cadastros/formCadFornecedorPF.js"></script>
+    <script src="js/cadastros/formCadDadosBancariosFornecedor.js"></script>
+    <script src="js/cadastros/formCadGrupoFornecedor.js"></script>
+</head>
+
+<body>
+    <div id="divFormCadastroFornecedorPF">
+        
+            <div class="tab-cad-fornecedor">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#tab1" data-toggle="tab">Dados Principais</a>
+                    </li>
+                    <li><a href="#tab2" data-toggle="tab" id="dadosBancario">Dados Bancarios</a>
+                    </li>
+                    <li><a href="#tab3" data-toggle="tab" id="grupo">Grupos Participante</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="tab1">
+                        <form id="formCadFornecedorPF" name="formCadFornecedorPF" method="post" action="">
+
+                        <div hidden="">
+                            <input type="text" id="url" value="../servlets/cadastros/ServletFornecedor.php" readonly="" />
+                            <input type="text" id="id" name="id" value="" placeholder="id" readonly="" />
+                            <input type="text" id="opcao" name="opcao" value="" placeholder="opcao" readonly="" />
+                            <input type="text" id="tipoFornecedor" name="tipoFornecedor" value="pf" placeholder="tipoFornecedor" readonly="" />
+                        </div>
+
+                        <fieldset class="well">
+                            <legend class="well-legend">Informações Principais</legend>
+                            <div id="divDadosFornecedor" class="labelCampoFormulario">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="checkbox" id="situacao" name="situacao" value="1" checked="">
+                                            <span>ATIVO</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nome">Nome</label>
+                                            <input type="text" id="nome" class="form-control" name="nome" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="documento">CPF</label>
+                                            <input type="text" id="documento" class="dadosFornecedor form-control" name="documento" required="" placeholder="Somente numeros...">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="button" id="buttonCPF" style="margin-top: 25px">Verificar</button>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="pis">PIS</label>
+                                            <input type="text" id="pis" class="form-control" name="pis" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="rg">RG</label>
+                                            <input type="text" id="rg" class="form-control" name="rg" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="orgaoExpeditor">Orgão Expeditor</label>
+                                            <input type="text" id="orgaoExpeditor" class="form-control" name="orgaoExpeditor" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="dataExpedicao">Data Expedição</label>
+                                            <input type="text" id="dataExpedicao" class="form-control" name="dataExpedicao" maxlength="10">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="well">
+                            <legend class="well-legend">Endereço</legend>
+                            <div id="divEnderecoFornecedor"></div>
+                        </fieldset>
+
+                        <fieldset class="well">
+                            <legend class="well-legend">Contato</legend>
+                            <div class="row">
+                                <div id="divTelefoneFornecedor" class="col-md-6"></div>
+                                <div id="divEmailFornecedor" class="col-md-6"></div>
+                            </div>
+                            
+                            <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label for="site">Site</label>
+                                      <input type="text" id="site" class="form-control" name="site">
+                                  </div>
+                              </div>
+                            </div>
+
+                        </fieldset>
+                        
+                        <button type="reset" id="reset">reset</button>
+                        <button type="submit" id="botaoSalvar" class="btn btn-primary pull-right">Salvar</button>
+        </form>
+        </div>
+        <div class="tab-pane" id="tab2">
+            <div id="divFormCadastroDadosBancarios" class="labelCampoFormulario">
+                <form id="formCadDadosBancariosFornecedor" name="formCadDadosBancariosFornecedor" method="post" action="">
+                    <span hidden="">
+                        <input type="text" id="url" value="../servlets/cadastros/ServletDadosBancarios.php" readonly=""/>
+                        <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                        <input type="text" id="fornecedorId" name="fornecedorId" value="" placeholder="fornecedorId" readonly=""/>
+                        <input type="text" id="opcao" name="opcao" value=""  placeholder="opcao" readonly=""/>
+                        <input type="text" id="urlBanco" value="../servlets/cadastros/ServletBanco.php" readonly="" />
+                    </span>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="checkbox" id="situacao" name="situacao" value="1" checked="">
+                                <span>ATIVO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="selectBanco">Banco</label>
+                                <select id="selectBanco" name="bancoId" class="form-control"></select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="agencia">Agencia</label>
+                                <input type="text" id="agencia" class="form-control" name="agencia" required="">
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="conta">Conta</label>
+                                <input type="text" id="conta" class="form-control" name="conta" required="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <button type="submit" id="botaoSalvar" class="btn btn-primary pull-right">Adicionar Conta</button>
+                                <button   type="reset" id="reset">reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="divListaDadosBancariosCadastrados" style="margin-top: 10px;">
+                            <div class="panel panel-default">
+                                <div class="panel-heading text-center">
+                                    <h5>Contas Cadastradas</h5>
+                                </div>
+                                <table id="tabelaContas" class="table table-condensed">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="tab-pane" id="tab3">
+            <form id="formCadGrupoFornecedor" name="formCadGrupoFornecedor" method="POST">
+                <div hidden="">
+                    <input type="text" id="opcao" name="opcao" value="salvarGrupoFornecedor" placeholder="opcao" readonly="" />
+                    <input type="text" id="fornecedorId" name="fornecedorId" value="" placeholder="fornecedorId" readonly="" />
+                    <input type="text" id="urlND" value="../servlets/cadastros/ServletNaturezaDespesa.php" readonly="" />
+                    <input type="text" id="url" value="../servlets/cadastros/ServletGrupo.php" readonly="" />
+                </div>
+
+                <div id="divNaturezaDespesa" class="labelCampoFormulario"></div>
+                <button type="reset" id="reset">reset</button>
+                <button type="submit" id="botaoSalvar" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+        </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>

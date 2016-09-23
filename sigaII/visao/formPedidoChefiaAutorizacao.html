@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/compras/formPedidoChefiaAutorizacao.js"></script>
+    </head>
+    <body>
+        <h3></h3>
+        <div class="panel panel-primary panel-autorizar-pedido">
+            <div class="panel-heading text-center">
+                <h3>PEDIDOS SOLICITADOS</h3>
+            </div>
+            <div class="panel-body">
+                <h4></h4>
+            
+            
+                <form id="formPedidoChefiaAutorizacao" name="formPedidoChefiaAutorizacao" method="POST" action="">
+                    <span hidden="">
+                        <input type="text" id="url" value="../servlets/compras/ServletPedidoChefiaAutorizacao.php" readonly=""/>
+                        <input type="text" id="id" name="id" value="" placeholder="id" readonly=""/>
+                        <input type="text" id="opcao" name="opcao" value="inserir" placeholder="opcao" readonly=""/>
+                        <input type="text" id="matriculaResponsavel" name="matriculaResponsavel"  placeholder="matriculaResponsavel" readonly=""/>
+                        <input type="text" id="autorizado" name="autorizado"  placeholder="autorizado" readonly=""/>
+                    </span>
+                    <div id="divListaPedidosAberto" class="table-responsive">
+                        <table id="tabelaPedidosAbertos" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th id="thNumeroPedido">Número Pedido</th>
+                                    <th id="thDataPedido">Data Pedido</th>
+                                    <th id="thSolicitantePedido">Solicitante</th>
+                                    <th id="thBotoesPedido">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="divJustificativa" class="labelCampoFormulario" hidden="">
+
+                        <div class="form-group">
+                            <label for="descricao">Justificativa</label>
+                            <textarea id="justificativa" name="justificativa" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-inline pull-right">
+                                <button type="button" id="botaoCancelar" class="btn btn-danger">Cancelar</button>
+                                <button type="submit" id="botaoEnviar" class="btn btn-primary">Enviar</button>
+                                <button type="reset" id="reset">reset</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+        
+    </body>
+</html>

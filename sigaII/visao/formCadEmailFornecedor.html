@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/cadastros/formCadEmailFornecedor.js"></script>
+    </head>
+    <body>
+        <div id="divFormCadastro" class="labelCampoFormulario">
+            <form id="formCadEmailFornecedor" name="formCadEmailFornecedor" method="post" action="">
+                <span hidden="">
+                    <input type="text" id="url" value="../servlets/cadastros/ServletEmail.php" readonly=""/>
+                    <!--<input type="text" id="id" name="id" value="" readonly="" placeholder="id"/>-->
+                    <input type="text" id="fornecedorId" name="fornecedorId" value="" readonly="" placeholder="fornecedorId"/>
+                    <input type="text" id="opcao" name="opcao" value="inserir" readonly="" placeholder="opcao"/>
+                </span>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="email">E-Mail</label>
+                                    <input type="text" id="email" name="email" required=""class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-success pull-right" id="incluirEmail" style="margin-top: 25px">Incluir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="reset" id="reset">reset</button>
+            </form>
+        </div>
+        <div class="row">
+            <div id="divListaEmailsCadastrados" class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h5>Emails Cadastrados</h5>
+                    </div>
+                    <table id="tabelaEmails" class="table table-condensed">
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

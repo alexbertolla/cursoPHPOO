@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SIGA - Sistema Integrado de Gestão de Aquisição e Almoxarifado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/dimensoes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css">
+        <link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui/jquery-ui.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/bootbox.min.js"></script>
+        <script src="js/usuarioLogado.js"></script>
+        <script src="js/infoLogin.js"></script>
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/painelPrincipal.js"></script>
+        <script src="js/jquery.address.min.js"></script>
+        
+        
+    </head>
+    <body>
+        <div id="sistemaConfiguracao" style="display: none">
+            <input type="text" id="anoSistema" placeholder="anoSistema" readonly=""/>
+            <input type="text" id="usuarioLogadoMatricula" placeholder="usuarioLogadoMatricula" readonly=""/>
+            <input type="text" id="usuarioLogadoNome" placeholder="usuarioLogadoNome" readonly=""/>
+            <input type="text" id="usuarioLogadoUsuario" placeholder="usuarioLogadoUsuario" readonly=""/>
+            <input type="text" id="usuarioLogadoEmail" placeholder="usuarioLogadoEmail" readonly=""/>
+            <input type="text" id="usuarioLogadoNomePerfil" placeholder="usuarioLogadoNomePerfil" readonly=""/>
+            <input type="text" id="usuarioLogadoPefilId" placeholder="usuarioLogadoPefilId" readonly=""/>
+        </div>
+        <div id="sistema" class="container">
+            <div id="head">
+                <div id="divInfoLogin" class="item">
+                    <div class="pull-right">
+                        <strong><span id="labelUsuarioLogado"></span></strong>
+                        <span id="perfilUsuario"></span>
+                        <span id="spanIconeLogoff">
+                            <button type="button" id="">Sair</button>
+                        </span>
+                    </div>
+                </div>
+                <div id="divLogoSistema" class="item text-center">
+                    <img src="imagens/logo_siga.png" alt="" id="imgLogoPrincipal">
+                    <!--<img src="imagens/logoUnidade.jpg" alt="" id="imgLogoEmbrapa">-->
+                </div>
+            </div>
+
+            <div id="nav"></div>
+
+            <div id="main">
+                <div id="divMensagem">
+                    <label id="labelMensagemSistema"></label>
+                </div>
+
+                <div id="divCaminho">
+                </div>
+
+                <div id="conteudoSistema">
+
+                </div>
+            </div>
+            <div id="foot" class="text-center">
+                <span id="infoRodape">
+                </span>
+            </div>
+        </div>
+
+        <div id="divProgressbar">
+            <div id="progressbar"><div class="progress-label">Carregando...</div></div>
+        </div>
+    </body>
+</html>

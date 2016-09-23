@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estiloFontes.css">
+        <link rel="stylesheet" href="css/estiloBotoes.css">
+        <link rel="stylesheet" href="css/estiloFormularios.css">
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/acaoFormularios.js"></script>
+        <script src="js/configuracao/formConfigurarDadosUnidade.js"></script>
+
+    </head>
+    <body>
+        <div id="divFormulario">
+            
+            <form id="formConfigurarDadosUnidade" name="formConfigurarDadosUnidade" class="labelCampoFormulario">
+                <div hidden="">
+                    <input type="text" id="url" value="../servlets/configuracao/ServleDadosUnidade.php" readonly=""/>
+                    <input type="text" id="opcao" name="opcao" value="salvarDadosUnidade" readonly=""/>
+                </div>
+                
+                <div class="tab-config-dados-unidade">
+                    <ul  class="nav nav-pills">
+                        <li class="active">
+                            <a  href="#tab1" data-toggle="tab">Dados para faturamento</a>
+                        </li>
+                        <li><a href="#tab2" data-toggle="tab">Dados Bancarios</a>
+                        </li>
+                        <li><a href="#tab3" data-toggle="tab">Chefia</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content clearfix">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" id="nome" name="nome" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Sigla</label>
+                                        <input type="text" id="sigla" name="sigla" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">CNPJ</label>
+                                        <input type="text" id="cnpj" name="cnpj" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="nome">Inscrição Estadual</label>
+                                        <input type="text" id="inscricaoEstadual" name="inscricaoEstadual" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Inscrição Municipal</label>
+                                        <input type="text" id="inscricaoMunicipal" name="inscricaoMunicipal" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">SIGED</label>
+                                        <input type="text" id="codigoSiged" name="codigoSiged" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="nome">Telefone</label>
+                                        <input type="text" id="telefone" name="telefone" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">UASG</label>
+                                        <input type="text" id="codigoUasg" name="codigoUasg" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab2">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="nome">Logradouro</label>
+                                        <input type="text" id="logradouro" name="logradouro" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Número</label>
+                                        <input type="text" id="numero" name="numero" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="form-group">
+                                        <label for="nome">Complemento</label>
+                                        <input type="text" id="complemento" name="complemento" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Bairro</label>
+                                        <input type="text" id="bairro" name="bairro" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Cidade</label>
+                                        <input type="text" id="cidade" name="cidade" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Estado</label>
+                                        <input type="text" id="estado" name="estado" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">CEP</label>
+                                        <input type="text" id="cep" name="cep" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab3">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Chefe Geral</label>
+                                        <input type="text" id="chefeGeral" name="chefeGeral" class="form-control" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="ncm">Chefe Administrativo</label>
+                                        <input type="text" id="chefeAdministrativo" name="chefeAdministrativo" class="form-control" required="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" id="botaoSalvar" class="btn btn-primary pull-right">Salvar</button>
+                    </div>
+                </div>
+                
+                
+            </form>
+        </div>
+    </body>
+</html>

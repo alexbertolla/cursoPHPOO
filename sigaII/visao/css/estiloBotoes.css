@@ -1,0 +1,92 @@
+#linkFalso,.linkFalso, #linkBloqueado, .linkBloqueado{
+    pointer-events: none;
+}
+
+#reset{
+    display: none;
+}
+
+.botaoListaCadastrados{
+    float: right;
+}
+
+#botaoLogoff{
+    width: 1.7rem;
+    height: 1.8rem;
+    border: 0rem;
+    background-image: url("../imagens/button_logoff.png");
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    color: transparent;
+}
+
+#botaoTabela, .botaoTabela{
+    width: 1.7rem;
+    height: 1.8rem;
+    /*border: 0rem;*/
+    background-size: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: left;
+    /*background-color: transparent;*/
+    color: transparent;
+}
+
+.btn {
+    background: linear-gradient(#d7d7d7,#f1f1f1);
+    border: 1px solid #b5b5b5;
+    margin-left: 10px;
+    text-shadow: none;
+}
+
+.btn:hover {
+    background-position: 0;
+}
+
+.btn-danger {
+    border-color: #b92c28;
+    color: #b92c28;
+}
+
+.btn-danger:hover {
+    background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%);
+}
+
+.btn-warning {
+    border-color: #e38d13;
+    color: #e38d13;
+}
+
+.btn-warning:hover {
+    background-image: -webkit-linear-gradient(top, #f0ad4e 0%, #eb9316 100%);
+}
+
+.btn-success {
+    border-color: #3e8f3e;
+    color: #3e8f3e;
+}
+
+.btn-success:hover {
+    background-image: -webkit-linear-gradient(top, #5cb85c 0%, #419641 100%);
+}
+
+.btn-primary {
+    border-color: #245580;
+    color: #245580;
+}
+
+.btn-primary:hover {
+    background-image: -webkit-linear-gradient(top, #337ab7 0%, #265a88 100%);
+}
+
+.btn[disabled] {
+    color: #fff;
+}
+
+.btn:focus {
+    color: #000;
+    border: 1px solid #000;
+    outline-color: transparent;
+    background-position: 0;
+}
