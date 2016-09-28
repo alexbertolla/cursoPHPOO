@@ -11,7 +11,8 @@
  *
  * @author alex.bertolla
  */
-class ClientePJ implements InterfaceImportanciaCliente {
+include_once './clienteinterface.php';
+class ClientePJ implements ClienteInterface  {
 
     private $cnpj;
     private $nome;
@@ -34,52 +35,36 @@ class ClientePJ implements InterfaceImportanciaCliente {
         $this->grauImportancia = $grauImportancia;
     }
 
-    function getCnpj() {
-        return $this->cnpj;
-    }
-
-    function getNome() {
-        return $this->nome;
-    }
-
-    function getEndereco() {
-        return $this->endereco;
-    }
-
-    function getTelefone() {
-        return $this->telefone;
-    }
-
-    function getEmail() {
+    public function getEmail() {
         return $this->email;
     }
 
-    function getTipo() {
-        return $this->tipo;
+    public function getEndereco() {
+        return $this->endereco;
     }
 
-    function getGrauImportancia() {
-        return $this->grauImportancia;
+    public function getNome() {
+        return $this->nome;
     }
 
-    function setCnpj($cnpj) {
-        $this->cnpj = $cnpj;
+    public function getTelefone() {
+        return $this->telefone;
     }
 
-    function setNome($nome) {
-        $this->nome = $nome;
+    public function setEmail($email) {
+        $this->email=$email;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    public function setEndereco($endereco) {
+        $this->endereco=$endereco;   
     }
 
-    function setTelefone($telefone) {
+    public function setNome($nome) {
+        $this->nome=$nome;
+    }
+
+    public function setTelefone($telefone) {
         $this->telefone = $telefone;
-    }
-
-    function setEmail($email) {
-        $this->email = $email;
     }
 
 }

@@ -13,6 +13,8 @@ and open the template in the editor.
     <body>
         <?php
         include_once './arrayClientes.php';
+
+
         $ordem = 'C';
         if (!isset($_GET['ordem']) || $_GET['ordem'] == 'C') {
             sort($listaCliente);
@@ -20,8 +22,7 @@ and open the template in the editor.
         } else {
             rsort($listaCliente);
         }
-//        ($ordem === 'C') ?  : ;
-//        print_r($listaCliente)
+
         ?>
         <table border ='1' class="table table-hover table-bordered sortable">
             <tr>

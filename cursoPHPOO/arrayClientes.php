@@ -1,6 +1,9 @@
 <?php
 
-include_once './Cliente.php';
+include_once './ClientePF.php.php';
+include_once './ClientePJ.php';
+echo 'teste2';
+exit();
 $listaCliente = [];
 $cliente1 = new ClientePF("Alex", '123456', 'Rua x', '123458', 'alex@dominio.com');
 $listaCliente[]=$cliente1;
@@ -17,18 +20,19 @@ $listaCliente[]=$cliente4;
 $cliente5 = new ClientePF('Patricia', '14544354', 'av 2', '3565466', 'patriciax@dominio.com');
 $listaCliente[]=$cliente5;
 
-$cliente6 = new ClientePF('Fabio', '45454124', 'av 10', '6356456', 'fabiox@dominio.com');
+$cliente6 = new ClientePJ('empresa1', '45454124', 'av 10', '6356456', 'fabiox@dominio.com');
 $listaCliente[]=$cliente6;
 
-$cliente7 = new ClientePF('Carlos', '245646', 'rua 15', '324655354', 'caralosx@dominio.com');
+$cliente7 = new ClientePJ('empresa2', '245646', 'rua 15', '324655354', 'caralosx@dominio.com');
 $listaCliente[]=$cliente7;
 
-$cliente8 = new ClientePF('Pedro', '546546', 'av 10', '2453321', 'pedrox@dominio.com');
+$cliente8 = new ClientePJ('empresa3', '546546', 'av 10', '2453321', 'pedrox@dominio.com');
 $listaCliente[]=$cliente8;
 
-$cliente9 = new ClientePF('Wesley', '46543244', 'rua x', '46532126', 'wesleyx@dominio.com');
+$cliente9 = new ClientePJ('empresa4', '46543244', 'rua x', '46532126', 'wesleyx@dominio.com');
 $listaCliente[]=$cliente9;
 
-$cliente10 = new ClientePF('Fulano', '543434', 'rua z', '52456465', 'fulanox@dominio.com');
+$cliente10 = new ClientePJ('empresa5', '543434', 'rua z', '52456465', 'fulanox@dominio.com');
 $listaCliente[]=$cliente10;
 
+print_r($listaCliente);

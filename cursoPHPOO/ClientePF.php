@@ -11,7 +11,9 @@
  *
  * @author alex.bertolla
  */
-class ClientePF implements InterfaceImportanciaCliente {
+include_once './clienteinterface.php';
+
+class ClientePF implements ClienteInterface {
 
     private $nome;
     private $cpf;
@@ -34,52 +36,36 @@ class ClientePF implements InterfaceImportanciaCliente {
         $this->grauImportancia = $grauImportancia;
     }
 
-    function getNome() {
-        return $this->nome;
+    public function getEmail() {
+        
     }
 
-    function getCpf() {
-        return $this->cpf;
+    public function getEndereco() {
+        
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    public function getNome() {
+        
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    public function getTelefone() {
+        
     }
 
-    function getEmail() {
-        return $this->email;
+    public function setEmail($email) {
+        $this->email = $email;
     }
 
-    function getTipo() {
-        return $this->tipo;
-    }
-
-    function getGrauImportancia() {
-        return $this->grauImportancia;
-    }
-
-    function setNome($nome) {
-        $this->nome = $nome;
-    }
-
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
-    }
-
-    function setEndereco($endereco) {
+    public function setEndereco($endereco) {
         $this->endereco = $endereco;
     }
 
-    function setTelefone($telefone) {
-        $this->telefone = $telefone;
+    public function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    function setEmail($email) {
-        $this->email = $email;
+    public function setTelefone($telefone) {
+        $this->telefone = $telefone;
     }
 
 }
