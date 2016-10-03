@@ -11,28 +11,39 @@
  *
  * @author alex.bertolla
  */
-include_once './clienteinterface.php';
-class ClientePJ implements ClienteInterface  {
+include_once './ClienteInterface.php';
+
+class ClientePJ implements ClienteInterface {
 
     private $cnpj;
     private $nome;
     private $endereco;
     private $telefone;
     private $email;
-    private $tipo;
     private $grauImportancia;
 
-    public function __construct($cnpj, $nome, $endereco, $telefone, $email) {
-        $this->cnpj = $cnpj;
+    public function __construct($nome, $documento, $endereco, $telefone, $email) {
+        $this->cnpj = $documento;
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
         $this->email = $email;
-        $this->tipo = 'Pessoa Jurídica';
     }
 
     public function setGrauImportancia($grauImportancia) {
         $this->grauImportancia = $grauImportancia;
+    }
+
+    function getGrauImportancia() {
+        return $this->grauImportancia;
+    }
+
+    function getDocumento() {
+        return $this->cnpj;
+    }
+
+    function setDocumento($documento) {
+        $this->cnpj = $documento;
     }
 
     public function getEmail() {
@@ -52,15 +63,15 @@ class ClientePJ implements ClienteInterface  {
     }
 
     public function setEmail($email) {
-        $this->email=$email;
+        $this->email = $email;
     }
 
     public function setEndereco($endereco) {
-        $this->endereco=$endereco;   
+        $this->endereco = $endereco;
     }
 
     public function setNome($nome) {
-        $this->nome=$nome;
+        $this->nome = $nome;
     }
 
     public function setTelefone($telefone) {

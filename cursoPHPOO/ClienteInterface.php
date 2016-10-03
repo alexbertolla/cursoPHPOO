@@ -12,6 +12,10 @@
  */
 interface ClienteInterface {
 
+    function getDocumento();
+
+    function setDocumento($documento);
+
     function getNome();
 
     function setNome($nome);
@@ -29,4 +33,5 @@ interface ClienteInterface {
     function setEmail($email);
 
     function setGrauImportancia($grauImportancia);
+    function getGrauImportancia();
 }
