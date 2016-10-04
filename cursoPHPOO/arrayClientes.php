@@ -1,8 +1,7 @@
 <?php
-
-include_once './ClientePF.php';
-include_once './ClientePJ.php';
-include_once './ClienteEspecifico.php';
+use son\cliente\types\ClientePF;
+use son\cliente\types\ClientePJ;
+use son\cliente\types\ClienteEspecifico;
 
 $listaCliente = [];
 

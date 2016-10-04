@@ -1,9 +1,16 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+
+use son\cliente\types\ClientePF;
+use son\cliente\types\ClienteEspecifico;
+
+include_once './autoload.php';
+
+
+include_once './arrayClientes.php';
+
+//exit();
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -24,7 +31,7 @@ and open the template in the editor.
         ?>
         <table border ='1' class="table table-hover table-bordered sortable">
             <tr>
-                <td><a href="listaClientes.php?ordem=<?php echo $ordem ?>">Nome</a></td>
+                <td><a href="index.php?ordem=<?php echo $ordem ?>">Nome</a></td>
                 <td>Tipo</td><td>Grau de importância</td>
             </tr>
 
@@ -40,7 +47,14 @@ and open the template in the editor.
                 ?>
                 <tr>
                     <td>
-                        <a href="listaClientes.php?tipo=<?php echo $tipo ?>&nome=<?php echo $cliente->getNome(); ?>&cpf=<?php echo $cliente->getDocumento(); ?>&endereco=<?php echo $cliente->getEndereco(); ?>&telefone=<?php echo $cliente->getTelefone(); ?>&email=<?php echo $cliente->getEmail(); ?>&enderecoCobranca=<?php echo $enderecoCobranca ?>&grauImportancia=<?php echo $cliente->getGrauImportancia() ?>">
+                        <a href="index.php?tipo=<?php echo $tipo ?>
+                           &nome=<?php echo $cliente->getNome(); ?>
+                           &cpf=<?php echo $cliente->getDocumento(); ?>
+                           &endereco=<?php echo $cliente->getEndereco(); ?>
+                           &telefone=<?php echo $cliente->getTelefone(); ?>
+                           &email=<?php echo $cliente->getEmail(); ?>
+                           &enderecoCobranca=<?php echo $enderecoCobranca ?>
+                           &grauImportancia=<?php echo $cliente->getGrauImportancia() ?>">
                             <?php echo $cliente->getNome(); ?>
                         </a>
                     </td>

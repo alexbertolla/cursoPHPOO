@@ -1,17 +1,9 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+namespace son\cliente\types;
+use son\cliente\interfaces\EnderecoComprancaInterface;
+use son\cliente\interfaces\ClienteInterface;
 
-/**
- * Description of ClienteEspecifico
- *
- * @author alex.bertolla
- */
-include_once './EnderecoComprancaInterface.php';
 
 class ClienteEspecifico implements EnderecoComprancaInterface {
 
