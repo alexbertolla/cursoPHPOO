@@ -7,4 +7,6 @@ interface ClienteInterface {
     function getDocumento();
 
     function setDocumento($documento);
+
+    
 }

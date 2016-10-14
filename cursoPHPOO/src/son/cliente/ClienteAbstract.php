@@ -19,6 +19,8 @@ abstract class ClienteAbstract implements ClienteInterface {
         $this->email = $email;
     }
 
+   
+
     function getNome() {
         return $this->nome;
     }
