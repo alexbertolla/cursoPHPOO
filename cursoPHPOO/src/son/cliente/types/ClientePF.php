@@ -8,8 +8,8 @@ class ClientePF extends ClienteAbstract {
 
     private $cpf;
 
-    public function __construct($nome, $documento, $endereco, $telefone, $email) {
-        parent::__construct($nome, $endereco, $telefone, $email);
+    public function __construct($id, $nome, $documento, $endereco, $telefone, $email, $grauImportancia) {
+        parent::__construct($id, $nome, $endereco, $telefone, $email, $grauImportancia);
         $this->cpf = $documento;
     }
 

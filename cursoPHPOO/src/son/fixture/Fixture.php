@@ -44,6 +44,15 @@ class Fixture {
     }
 
     public function persist(ClienteAbstract $cliente) {
+        if ($cliente->getId()) {
+            $this->alterar($cliente);
+        } else {
+            return $this->inserir($cliente);
+        }
+        return FALSE;
+    }
+
+    private function inserir(ClienteAbstract $cliente) {
         echo "## PERSISTINDO CLIENTE ##<br>";
         $query = 'INSERT INTO cliente (nome, endereco, telefone, email, grauImportancia) '
                 . ' VALUES (:nome, :endereco, :telefone, :email, :grauImportancia)';
@@ -56,16 +65,46 @@ class Fixture {
         return $this->flush();
     }
 
+    private function alterar(ClienteAbstract $cliente) {
+        echo "## PERSISTINDO CLIENTE ##<br>";
+        echo $query = 'UPDATE cliente SET nome=:nome, endereco=:endereco, telefone=:telefone, '
+        . ' email=:email, grauImportancia=:grauImportancia '
+        . ' WHERE id=:id';
+        $this->stmt = self::$connDB->prepare($query);
+        $this->stmt->bindParam('id', $cliente->getId());
+        $this->stmt->bindParam('nome', $cliente->getNome());
+        $this->stmt->bindParam('endereco', $cliente->getEndereco());
+        $this->stmt->bindParam('telefone', $cliente->getTelefone());
+        $this->stmt->bindParam('email', $cliente->getEmail());
+        $this->stmt->bindParam('grauImportancia', $cliente->getGrauImportancia());
+        return $this->flush();
+    }
+
+    public function excluirCliente($id) {
+        $query = 'DELETE FROM cliente WHERE id=:id';
+        $this->stmt = self::$connDB->prepare($query);
+        $this->stmt->bindParam('id', $id);
+        return $this->flush();
+    }
+
     public function flush() {
         echo "## FLUSH CLIENTE ##<br>";
         return $this->stmt->execute();
     }
 
-    public function listarClientes(\PDO $conn) {
+    public function listarClientes() {
         $query = 'SELECT * FROM cliente ORDER BY nome';
-        $stmt = $conn->prepare($query);
+        $stmt = self::$connDB->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function buscarClientePorId($id) {
+        $query = 'SELECT * FROM cliente WHERE id=:id';
+        $stmt = self::$connDB->prepare($query);
+        $stmt->bindParam('id', $id);
+        $stmt->execute();
+        return $stmt->fetch(\PDO::FETCH_OBJ);
     }
 
     public function gerarListaClientes() {

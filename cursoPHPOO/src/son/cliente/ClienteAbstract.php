@@ -6,20 +6,25 @@ use son\cliente\interfaces\ClienteInterface;
 
 abstract class ClienteAbstract implements ClienteInterface {
 
+    private $id;
     private $nome;
     private $endereco;
     private $telefone;
     private $email;
     private $grauImportancia;
 
-    public function __construct($nome, $endereco, $telefone, $email) {
+    public function __construct($id, $nome, $endereco, $telefone, $email, $grauImportancia) {
+        $this->id = $id;
         $this->nome = $nome;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
         $this->email = $email;
+        $this->grauImportancia = $grauImportancia;
     }
 
-   
+    function getId() {
+        return $this->id;
+    }
 
     function getNome() {
         return $this->nome;
@@ -39,6 +44,10 @@ abstract class ClienteAbstract implements ClienteInterface {
 
     function getGrauImportancia() {
         return $this->grauImportancia;
+    }
+
+    function setId($id) {
+        $this->id = $id;
     }
 
     function setNome($nome) {
