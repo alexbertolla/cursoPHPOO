@@ -10,6 +10,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <?php
+        $_SESSION['LOGADO'] = FALSE;
+        ?>
         <div>
             <form method="POST" action="efetuarLogin.php">
                 Usuário <input type="text" name="usuario">

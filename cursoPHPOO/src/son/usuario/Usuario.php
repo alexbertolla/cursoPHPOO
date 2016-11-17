@@ -6,6 +6,10 @@
  * and open the template in the editor.
  */
 
+namespace son\usuario;
+
+use son\usuario\UsuarioDao;
+
 /**
  * Description of Usuario
  *
@@ -14,15 +18,63 @@
 class Usuario {
 
     private $id;
-    private $usuairo;
+    private $usuario;
     private $senha;
+
+    function persistirUsuario(\PDO $conn, Usuario $usuario) {
+        $usuarioDao = new UsuarioDao($conn);
+        return $usuarioDao->persist($usuario);
+    }
+
+    function excluirUsuario(\PDO $conn) {
+        $usuarioDao = new UsuarioDao($conn);
+        $usuarioDao->excuirUsuario($this->id);
+    }
+
+    function autenticarUsuario(\PDO $conn) {
+        $usuarioDao = new UsuarioDao($conn);
+        $usuario = $usuarioDao->buscarUsuario($this->getUsuario());
+        if ($usuario && password_verify($this->senha, $usuario->senha)) {
+            return TRUE;
+        } else {
+            throw new \Exception('Login incorreto!');
+        }
+    }
+
+    function listarUsuario(\PDO $conn) {
+        $usuarioDao = new UsuarioDao($conn);
+        $lista = $usuarioDao->listarUsuario();
+        $listaUsuario = array();
+        foreach ($lista as $usuario) {
+            $user = new Usuario();
+            $user->setId($usuario->id);
+            $user->setUsuario($usuario->usuario);
+            $listaUsuario[] = $user;
+        }
+        return $listaUsuario;
+    }
+
+    function buscarUsuarioPorId(\PDO $conn, $id) {
+        $usuarioDao = new UsuarioDao($conn);
+        $usuario = $usuarioDao->buscarUsuarioPorId($id);
+        $user = new Usuario();
+        $user->setId($usuario->id);
+        $user->setUsuario($usuario->usuario);
+        $user->setSenha($usuario->senha);
+        return $user;
+    }
+
+    function gerarTabelaUsuario(\PDO $conn) {
+        $usuarioDao = new UsuarioDao($conn);
+        return $usuarioDao->criarTabelaUsuario();
+    }
 
     function getId() {
         return $this->id;
     }
 
-    function getUsuairo() {
-        return $this->usuairo;
+    function getUsuario() {
+        return $this->usuario;
     }
 
     function getSenha() {
@@ -33,8 +85,8 @@ class Usuario {
         $this->id = $id;
     }
 
-    function setUsuairo($usuairo) {
-        $this->usuairo = $usuairo;
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
     }
 
     function setSenha($senha) {

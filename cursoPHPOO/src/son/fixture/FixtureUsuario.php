@@ -8,7 +8,7 @@
 
 namespace son\fixture;
 
-use Usuario;
+use son\usuario\Usuario;
 
 /**
  * Description of FixtureUsuario
@@ -17,70 +17,37 @@ use Usuario;
  */
 class FixtureUsuario {
 
-    private static $connDB;
+    private $usuario;
+    private static $conn;
 
-    public function __construct(\PDO $conn) {
-        self::$connDB = $conn;
+    public function __construct(\PDO $conn, Usuario $usuario) {
+        $this->usuario = $usuario;
+        self::$conn = $conn;
     }
 
-    public function criarTabelaUsuario() {
-        self::$connDB->query('DROP TABLE IF EXISTS usuario;');
-
-        $query = 'CREATE TABLE usuario ('
-                . 'id int(11) NOT NULL AUTO_INCREMENT,'
-                . 'usuario text'
-                . 'senha text,'
-                . ' DEFAULT NULL,PRIMARY KEY (`id`)'
-                . ')';
-        self::$connDB->query($query);
-    }
-
-    public function pesist(\Usuario $usuario) {
-        if ($usuario->getId()) {
-            return $this->inserirUsuario($usuario);
-        } else {
-            return $this->alterarUsuario($usuario);
+    public function getarEstruturaBD() {
+        if (!$this->criarTabela()) {
+            throw new \Exception('ERRO AO CRIAR TABELA');
         }
-        return FALSE;
+        
+        if (!$this->criarUsuarioAdmin()) {
+            throw new \Exception('ERRO AO INSERIR USUARIO admin');
+        }
+        
     }
 
-    private function inserirUsuario(\Usuario $usuario) {
-
-        $query = 'INSERT INTO  usuario (usuario, senha) VALUES '
-                . ' (:usuairo, :senha);';
-        $stmt = self::$connDB->prepare($query);
-        $stmt->bindParam('usuario', $usuario->getUsuairo());
-        $stmt->bindParam('senha', $usuario->getSenha());
-        return $stmt->execute();
+    private function criarTabela() {
+        echo '<br> ### GERANDO TABELA ### <br>';
+        return $this->usuario->gerarTabelaUsuario(self::$conn);
     }
 
-    private function alterarUsuario(\Usuario $usuario) {
-        $query = 'UPDATE  usuario SET usuario = :usuario, senha = :senha '
-                . ' WHERE id = :id;';
-        $stmt = self::$connDB->prepare($query);
-        $stmt->bindParam('id', $usuario->getId());
-        $stmt->bindParam('usuario', $usuario->getUsuairo());
-        $stmt->bindParam('senha', $usuario->getSenha());
-        return $stmt->execute();
-    }
-
-    public function excuirUsuario($id) {
-        $query = 'DELETE FROM usuario WHERE id = :id';
-        $stmt = self::$connDB->prepare($query);
-        $stmt->bindParam('id', $usuario->getId());
-        return $stmt->execute();
-    }
-
-    public function autenticar($usuario, $senha) {
-        $query = 'SELECT * FROM usuario '
-                . 'WHERE usuario = :usuario '
-                . ' AND '
-                . ' senha = :senha';
-        $stmt = self::$connDB->prepare($query);
-        $stmt->bindParam('usuario', $usuario);
-        $stmt->bindParam('senha', $senha);
-        $stmt->execute();
-        return $stmt->fetch(\PDO::FETCH_OBJ);
+    private function criarUsuarioAdmin() {
+        echo '<br> ### GERANDO USUARIO admin ### <br>';
+        $username = 'admin';
+        $senha = password_hash('admin', PASSWORD_DEFAULT);
+        $this->usuario->setUsuario($username);
+        $this->usuario->setSenha($senha);
+        return $this->usuario->persistirUsuario(self::$conn, $this->usuario);
     }
 
 }
