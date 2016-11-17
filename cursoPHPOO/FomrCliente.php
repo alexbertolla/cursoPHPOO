@@ -20,7 +20,7 @@ and open the template in the editor.
 
             if ($id && $_GET['excluir']) {
                 $fixture->excluirCliente($id);
-                header('location:index.php');
+                header('location:listarCliente.php');
             }
 
             if ($id && !isset($_POST['post'])) {
@@ -40,7 +40,7 @@ and open the template in the editor.
                 $importancia = $_POST['importancia'];
                 $cliente = new son\cliente\types\ClientePF($id, $nome, $documento, $endereco, $telefone, $email, $importancia);
                 $fixture->persist($cliente);
-                header('location:index.php');
+                header('location:listarCliente.php');
             }
         } catch (Exception $ex) {
             echo $ex->getMessage();
