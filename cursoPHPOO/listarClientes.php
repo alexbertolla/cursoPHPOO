@@ -22,7 +22,22 @@ and open the template in the editor.
                     <tr><th>Nome</th><th>Endereço</th><th>Telefone</th><th>E-mail</th><th>Importância</th></tr>
                 </thead>
                 <?php
-                $listaClientes = $fixture->listarClientes();
+                $opcao = $_GET['opcao'];
+                $nome=$_GET['nome'];
+                if ($opcao === 'buscarPorNome') {
+                    ?>
+                    <form method="get" action="listarClientes.php">
+                        <p>
+                            <input type="hidden" name="opcao" value="<?= $opcao ?>">
+                            <input type="text" name="nome" placeholder="Digite um nome"/>
+                            <button type="submit" >Buscar</button>
+                        </p>
+                    </form>
+                    <?php
+                    $listaClientes = $fixture->listarClientesPorNome($nome);
+                } else {
+                    $listaClientes = $fixture->listarClientes();
+                }
                 foreach ($listaClientes as $cliente) {
                     ?>
                     <tbody>

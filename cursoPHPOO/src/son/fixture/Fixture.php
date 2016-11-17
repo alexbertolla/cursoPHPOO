@@ -99,6 +99,17 @@ class Fixture {
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
+    public function listarClientesPorNome($nome) {
+        $nome = "%{$nome}%";
+        $query = "SELECT * FROM cliente "
+                . " WHERE nome LIKE ? "
+                . " ORDER BY nome";
+        $stmt = self::$connDB->prepare($query);
+//        $stmt->bindParam('nome', $nome);
+        $stmt->execute(array($nome));
+        return $stmt->fetchAll(\PDO::FETCH_OBJ);
+    }
+
     public function buscarClientePorId($id) {
         $query = 'SELECT * FROM cliente WHERE id=:id';
         $stmt = self::$connDB->prepare($query);

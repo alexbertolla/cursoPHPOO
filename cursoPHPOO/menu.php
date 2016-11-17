@@ -10,7 +10,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <p><a href="listarClientes.php">Lista de Clientes Cadastrados</a></p>
+        <p><a href="listarClientes.php?opcao=listar">Lista de Clientes Cadastrados</a></p>
+        <p><a href="listarClientes.php?opcao=buscarPorNome">Buscar Por Nome</a></p>
         <p><a href="listarUsuarios.php">Lista de Usuários Cadastrados</a></p>
         <p><a href="index.php">Sair</a></p>
     </body>
